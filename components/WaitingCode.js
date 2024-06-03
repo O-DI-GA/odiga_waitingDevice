@@ -61,7 +61,7 @@ function WaitingCode() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#FFFEF9",
     alignItems: "center",
     justifyContent: "center",
     padding: 20,
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
   },
   underline: {
     height: 2,
-    width: "100%",
+    width: "70%",
     backgroundColor: "black",
     marginTop: 5,
   },

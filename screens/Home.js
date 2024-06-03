@@ -1,11 +1,15 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
 import WaitingCode from "../components/WaitingCode";
+import WaitingRegister from "../components/WaitingRegister";
 
 const Home = () => {
   return (
     <View style={styles.container}>
-      <WaitingCode />
+      <View style={styles.row}>
+        <WaitingCode />
+        <WaitingRegister />
+      </View>
     </View>
   );
 };
@@ -13,18 +17,14 @@ const Home = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#FFFFFF",
     alignItems: "center",
     justifyContent: "center",
   },
-  waitingContainer: {
-    padding: 20,
-    backgroundColor: "#f0f0f0",
-    borderRadius: 10,
-  },
-  waitingText: {
-    fontSize: 18,
-    color: "#333",
+  row: {
+    flexDirection: "row",
+    gap: 10,
+    alignItems: "center",
   },
 });
 

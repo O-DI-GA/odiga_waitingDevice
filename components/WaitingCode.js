@@ -6,9 +6,11 @@ import {
   View,
   TouchableOpacity,
 } from "react-native";
+import { postRequest } from "../utils/api";
 
 function WaitingCode() {
   const [code, setCode] = useState("");
+  const [tableNumber, setTableNumber] = useState(null);
   const hiddenInputRef = useRef(null);
 
   useEffect(() => {
@@ -21,9 +23,29 @@ function WaitingCode() {
     setCode(filteredText);
   };
 
-  const handleVerify = () => {
-    alert(`입력한 인증코드: ${code}`);
+  const fetchData = async () => {
+    try {
+      const response = await postRequest(`api/v1/tablet/store/1/waiting`, {
+        waitingCode: code,
+      });
+      console.log("response: ", response);
+      const tableNumber = response.data.tableNumber;
+      setTableNumber(tableNumber);
+      console.log("테이블 번호: ", tableNumber);
+    } catch (error) {
+      console.error("Fetching error:", error);
+    }
   };
+
+  const handleVerify = () => {
+    fetchData();
+  };
+
+  useEffect(() => {
+    if (tableNumber !== null) {
+      alert(`테이블 번호: ${tableNumber}`);
+    }
+  }, [tableNumber]);
 
   return (
     <TouchableOpacity

@@ -9,7 +9,7 @@ const Home = () => {
     <View style={styles.container}>
       <View style={styles.row}>
         <WaitingCode />
-        <WaitingRegister />
+        {/* <WaitingRegister /> */}
       </View>
       <CurrentNum />
     </View>

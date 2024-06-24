@@ -5,7 +5,7 @@ const CurrentNum = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.current}>현재 </Text>
-      <Text style={styles.num}> 103 번</Text>
+      <Text style={styles.num}> 1 번</Text>
     </View>
   );
 };
